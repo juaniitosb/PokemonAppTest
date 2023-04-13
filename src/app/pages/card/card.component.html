@@ -1,0 +1,43 @@
+<div class="col-12 md:col-12 lg:col-12 xl:col-12 sm:col-12" style="text-align: center">
+  <div class="col-12 md:col-12 lg:col-12 xl:col-12 sm:col-12" style="text-align: center">
+    <h2>{{namePokemon | uppercase}}</h2>
+    <h3 style="font-size: 1rem !important;"
+        *ngIf="(dataPokemon?.img?.dinamic == null && dataPokemon?.img?.static == null) && _idPokemon!=0">(Pokemon
+      selected no image)</h3>
+  </div>
+  <div class="col-12 md:col-12 lg:col-12 xl:col-12 sm:col-12" style="text-align: center">
+    <div class="col-12  md:col-8 lg:col-8 xl:col-8 sm:col-12 md:col-offset-2 lg:col-offset-2 xl:col-offset-2"
+         [style.background-color]="(numberPokemon>=0) ? '#eae6d3' : '#eae6d3'">
+      <img width="150" alt="Angular Logo"
+           [src]="(!!dataPokemon?.img?.dinamic)?dataPokemon.img.dinamic:(!!dataPokemon?.img?.static)?dataPokemon.img.static:'assets/img/backgroud/Imagen1.png'"
+      />
+    </div>
+    <div class="toolbar2 col-12  md:col-8 lg:col-8 xl:col-8 sm:col-12 md:col-offset-2 lg:col-offset-2 xl:col-offset-2"
+         *ngIf="_idPokemon!=0">
+      <div class="grid">
+        <p class="col-4">#</p>
+        <p class="col-8">{{dataPokemon?.info?.id}}</p>
+        <p class="col-4">Type(s)</p>
+        <p class="col-8">{{typeElement}}</p>
+        <p class="col-7"*ngIf="displayP">Height</p>
+        <p class="col-5"*ngIf="displayP">{{dataPokemon?.info?.height}}</p>
+        <p class="col-7"*ngIf="displayP">Weight</p>
+        <p class="col-5"*ngIf="displayP">{{dataPokemon?.info?.weight}}</p>
+        <p class="col-8"*ngIf="displayP">Base Experience</p>
+        <p class="col-4"*ngIf="displayP">{{dataPokemon?.info?.base_experience || '???'}}</p>
+        <p class="col-2" style="display: flex;align-items: center;justify-content: space-around;"*ngIf="displayP">Stats</p>
+        <p class="col-10"*ngIf="displayP">
+
+
+          <span style="display: inline-flex" *ngFor="let data of dataPokemon.stats, index as i">{{data.base_stat || ''}}
+            <p-avatar [image]="nameUrl(i)" styleClass="mr-2" tooltipPosition="bottom"
+                      shape="circle" [pTooltip]="data.stat?.name || ''"></p-avatar></span>
+        </p>
+        <p class="col-12">
+          <p-avatar [icon]="displayP?'pi pi-arrow-circle-up':'pi pi-arrow-circle-down'" styleClass="mr-2 down" [style]="{'background-color': '#eae6d3', 'color': '#3f423b','cursor':'pointer'}"
+                    shape="circle" (click)="displayP = !displayP"></p-avatar>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

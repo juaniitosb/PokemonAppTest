@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@800&display=swap');
+h1 {
+  font-family: 'Syne', sans-serif;
+  font-size: xxx-large;
+  color: #eae6d3;
+  padding-left: 2rem;
+}
+h4{
+  font-family: 'Syne', sans-serif;
+  color: #eae6d3;
+  font-size: x-small;
+}
+img{
+  padding-left: 2em;
+  margin-left: 4em;
+}
+.toolbar2 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #3f423b;
+  padding: 0;
+  border-bottom: 2px solid #eae6d3;
+}
+@media screen and (max-width: 767px) {
+  h1 {
+    font-family: 'Syne', sans-serif;
+    font-size: xx-large;
+    color: #eae6d3;
+    padding-left: 1rem;
+  }
+  img{
+    padding: 1em;
+    margin-left: 1em;
+    width: 90px;
+  }
+}
+@media screen and (max-width: 575px) {
+  h1 {
+    font-family: 'Syne', sans-serif;
+    font-size: large;
+    color: #eae6d3;
+  }
+  img{
+    width: 80px;
+    padding: 1em;
+  }
+}

@@ -1,1 +1,26 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&family=Syne:wght@800&display=swap');
+div.frameDiv{
+  height:45rem;color: #eae6d3;
+  padding: 0
+}
+
+@media screen and (max-width: 575px) {
+  div.frameDiv{
+    height:50em;
+    color: #eae6d3;
+    padding: 10px;
+  }
+}
+.p-datatable .p-paginator-bottom {
+  border: 0;
+  padding: 0;
+  background: transparent;
+  border-width: 0 0 1px 0;
+  border-radius: 0;
+}
+.p-paginator .p-paginator-pages .p-paginator-page.p-highlight {
+  background: #eae6d3 !important;
+  border-color: #eae6d3 !important;
+  color: #3f423b!important;
+}

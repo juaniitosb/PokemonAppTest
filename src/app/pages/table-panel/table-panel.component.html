@@ -1,0 +1,54 @@
+<div class="col-12 md:col-12 lg:col-12 xl:col-12 sm:col-12 framesTables" >
+  <div class="col-12 md:col-12 lg:col-12 xl:col-12 sm:col-12" style="text-align: center">
+    <input type="text" pInputText [(ngModel)]="searchPokemon" placeholder="Search by name or id #"
+             (change)="filter(searchPokemon)" />
+  </div>
+  <div class="col-12 md:col-12 lg:col-12 xl:col-12 sm:col-12">
+    <p-table
+      #tablePokemons
+      [value]="flagSearch?listPokemons:listPokemons[numberPage-1]"
+      [paginator]="flagSearch"
+      [pageLinks]="1"
+      [rows]="20"
+      selectionMode="single" [(selection)]="selectedPokemon" dataKey="url"
+      [tableStyle]="{ 'min-width': '20rem' }"
+      [scrollable]="true" scrollHeight="400px"
+      (selectionChange)="createDesing($event)"
+    >
+      <ng-template pTemplate="header">
+        <tr>
+          <th>Pokemons
+            <p-badge value="{{countPokemons }}" severity="danger"></p-badge>
+          </th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-pokemons let-rowIndex="rowIndex">
+        <tr [pSelectableRow]="pokemons">
+          <td *ngIf="flagSearch">{{rowIndex + 1 + '. ' + pokemons.name  }}</td>
+          <td *ngIf="!flagSearch">{{(increment?numberPage * 10 + rowIndex:rowIndex+1) + '. ' + pokemons.name  }}</td>
+          <td *ngIf="!listPokemons.length">No type found</td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
+
+
+  <div class="col-12 md:col-12 lg:col-12 xl:col-12 sm:col-12" style="text-align: center">
+    <img
+      width="90"
+      alt="Logo default"
+      src="assets/img/backgroud/pokemon.png"
+    />
+  </div>
+
+</div>
+<!--Version 2 Paginador native-->
+<!--  <div class="col-12 md:col-12 lg:col-12 xl:col-12 sm:col-12" style="text-align: center" *ngIf="!flagSearch">-->
+<!--    <div class="col-12 md:col-12 lg:col-12 xl:col-12 sm:col-12 " style="text-align: center">-->
+<!--      <p-button icon="pi pi-angle-double-left" (click)="downPage()"></p-button>-->
+<!--      <input style="width: 3rem;text-align: center;margin: 3px 3px 0px 3px" id="disabled-input" type="text" pInputText-->
+<!--             [disabled]="true" [(ngModel)]="numberPage"/>-->
+<!--      <p-button icon="pi pi-angle-double-right" (click)="incrementPage()"></p-button>-->
+
+<!--    </div>-->
+<!--  </div>-->

@@ -1,0 +1,63 @@
+div input{
+  background: transparent;
+  color: #eae6d3;
+  width: inherit;
+}
+div input:hover{
+  background: transparent;
+  color: #eae6d3;
+  border: 1px solid #eae6d3;
+}
+div input:focus{
+  background: transparent;
+  color: #eae6d3;
+  border: 1px solid #eae6d3 !important;
+  box-shadow:#eae6d3 !important;
+}
+div.framesTables{
+  border-right: 2px solid #eae6d3;
+  height: 800px
+}
+div p-table{
+  font-family:'Space Grotesk', sans-serif !important;
+  background-color: #1976d2;
+}
+div p-table th{
+  background-color: #3f423b;
+  color: #eae6d3;
+  border: 1px solid #eae6d3;
+}
+div p-table tr{
+  background-color: #3f423b;
+  color: #eae6d3;
+  border: 1px solid #3f423b;
+  transition: all 1s ease;
+}
+div p-table tr:hover {
+  background: #eae6d3 !important;
+  color: #3f423b !important;
+}
+p-datatable .p-paginator-bottom{
+  background-color: #3f423b;
+  color: #eae6d3;
+  border: 1px solid #eae6d3;
+}
+@media screen and (max-width: 767px) {
+  div.framesTables {
+    border-right: 0px;
+
+    height: 800px
+  }
+}
+@media screen and (max-width: 575px) {
+  h1 {
+    font-family: 'Syne', sans-serif;
+    font-size: large;
+    color: #eae6d3;
+  }
+  img{
+    width: 80px;
+    padding: 1em;
+  }
+}
+

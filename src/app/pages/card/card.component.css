@@ -1,0 +1,19 @@
+div h2,h3{
+  font-family: 'Space Grotesk', sans-serif !important;
+  color: #eae6d3;
+  font-size: 2rem;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #eae6d3;
+  -webkit-text-fill-color: #eae6d3; /* Will override color (regardless of order) */
+}
+div p{
+  font-family: 'Space Grotesk', sans-serif !important;
+  margin: 0;
+  border: 1px solid #eae6d3;
+}
+
+@media screen and (max-width: 575px) {
+  div h2,h3{
+    font-size: 1rem;
+  }
+}

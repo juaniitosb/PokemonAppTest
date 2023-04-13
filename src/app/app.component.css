@@ -1,0 +1,14 @@
+div h2{
+  margin: 0;
+  font-family: 'Space Grotesk', sans-serif !important;
+  font-size: 40px;
+  color: #3f423b;
+  text-shadow:
+    -1px -1px 0 #eae6d3,
+    1px -1px 0 #eae6d3,
+    -1px 1px 0 #eae6d3,
+    1px 1px 0 #eae6d3;
+}
+@media screen and (max-width: 767px) {
+
+}
